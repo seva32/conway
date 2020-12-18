@@ -6,22 +6,29 @@ import PropTypes from 'prop-types';
 
 import randomKey from '../utils/randomKey';
 import nextTick from './Grid.NextTick';
+import useInterval from '../utils/useInterval';
 
 function Grid({ row, col }) {
   const [matrix, setMatrix] = React.useState(
     Array.from({ length: row }, () => Array.from({ length: col }, () => false)),
   );
 
+  const [count, setCount] = React.useState(0);
+  const [paused, setPaused] = React.useState(false);
+  const [reset, setReset] = React.useState(false);
+
+  React.useEffect(() => {
+    if (reset) {
+      setCount(0);
+      setReset(false);
+    }
+  }, [reset]);
+
+  // esta funcion escucha eventos sobre cada celula
   const handleChange = (rowIdx, columnIdx) => {
     const copy = [...matrix];
-    // console.log(
-    //   `Row: ${rowIdx} - Col: ${columnIdx} - Value: ${copy[rowIdx][columnIdx]}`,
-    // );
     copy[rowIdx][columnIdx] = !copy[rowIdx][columnIdx];
     setMatrix(copy);
-    // console.log(
-    //   `Row: ${rowIdx} - Col: ${columnIdx} - Value: ${copy[rowIdx][columnIdx]}`,
-    // );
   };
 
   // esta funcion va a determinar el proximo estado de cada celula
@@ -30,10 +37,25 @@ function Grid({ row, col }) {
     setMatrix(nextTick(matrix, row, col));
   };
 
+  const intervalRef = useInterval(
+    () => {
+      if (count < 10) {
+        setCount(count + 1);
+        nextGen();
+      } else {
+        window.clearInterval(intervalRef.current);
+      }
+    },
+    paused ? null : 2000,
+  );
+
   return (
     <div>
-      <button onClick={nextGen} type="button">
-        next tick
+      <button onClick={() => setPaused(!paused)} type="button">
+        pause
+      </button>
+      <button onClick={() => setReset(true)} type="button">
+        reset
       </button>
       <table>
         <tbody>
@@ -66,102 +88,3 @@ Grid.propTypes = {
 };
 
 export default Grid;
-
-// function GameOfLife() {
-//   this.init = function (turns, width, height) {
-//     this.board = new Array(height);
-//     for (var x = 0; x < height; x++) {
-//       this.board[x] = new Array(width);
-//       for (var y = 0; y < width; y++) {
-//         this.board[x][y] = Math.round(Math.random());
-//       }
-//     }
-//     this.turns = turns;
-//   };
-
-//   this.nextGen = function () {
-//     this.boardNext = new Array(this.board.length);
-//     for (var i = 0; i < this.board.length; i++) {
-//       this.boardNext[i] = new Array(this.board[i].length);
-//     }
-//     for (var x = 0; x < this.board.length; x++) {
-//       for (var y = 0; y < this.board[x].length; y++) {
-//         var n = 0;
-//         for (var dx = -1; dx <= 1; dx++) {
-//           for (var dy = -1; dy <= 1; dy++) {
-//             if (dx == 0 && dy == 0) {
-//             } else if (
-//               typeof this.board[x + dx] !== 'undefined' &&
-//               typeof this.board[x + dx][y + dy] !== 'undefined' &&
-//               this.board[x + dx][y + dy]
-//             ) {
-//               n++;
-//             }
-//           }
-//         }
-//         var c = this.board[x][y];
-//         switch (n) {
-//           case 0:
-//           case 1:
-//             c = 0;
-//             break;
-//           case 2:
-//             break;
-//           case 3:
-//             c = 1;
-//             break;
-//           default:
-//             c = 0;
-//         }
-//         this.boardNext[x][y] = c;
-//       }
-//     }
-//     this.board = this.boardNext.slice();
-//   };
-
-//   this.print = function () {
-//     for (var x = 0; x < this.board.length; x++) {
-//       var l = '';
-//       for (var y = 0; y < this.board[x].length; y++) {
-//         if (this.board[x][y]) l += 'X';
-//         else l += ' ';
-//       }
-//       print(l);
-//     }
-//   };
-
-//   this.start = function () {
-//     for (var t = 0; t < this.turns; t++) {
-//       print('---\nTurn ' + (t + 1));
-//       this.print();
-//       this.nextGen();
-//     }
-//   };
-// }
-
-// var game = new GameOfLife();
-
-// print('---\n3x3 Blinker over three turns.');
-// game.init(3);
-// game.board = [
-//   [0, 0, 0],
-//   [1, 1, 1],
-//   [0, 0, 0],
-// ];
-// game.start();
-
-// print('---\n10x6 Glider over five turns.');
-// game.init(5);
-// game.board = [
-//   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-//   [0, 1, 1, 1, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-//   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-// ];
-// game.start();
-
-// print('---\nRandom 5x10');
-// game.init(5, 5, 10);
-// game.start();
