@@ -20,8 +20,7 @@ function Home() {
 
   return (
     <>
-      <h1>El home</h1>
-      <label htmlFor="user">
+      <label htmlFor="user" className="font-subtitle">
         Username:
         <input
           id="user"

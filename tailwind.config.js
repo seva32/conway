@@ -6,7 +6,12 @@ module.exports = {
     colors: {
       ...customColors,
     },
-    extend: {},
+    extend: {
+      screens: {
+        smMax: { max: '767px' },
+        // es para usar en el nav bar con @screen smMax { thead ... }
+      },
+    },
   },
   variants: {
     extend: {},
