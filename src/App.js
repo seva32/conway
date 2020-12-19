@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import { About, Home, NotFound } from './views';
+import { About, Home, Game, NotFound } from './views';
 
 import './assets/tailwind.css';
 
@@ -17,24 +17,14 @@ export default function App() {
             <li>
               <Link to="/about">About</Link>
             </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
           </ul>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
+          <Route exact path="/about" component={About} />
+          <Route path="/game/:id?" component={Game} />
+          <Route exact path="/" component={Home} />
+          <Route path="*" component={NotFound} />
         </Switch>
       </div>
     </Router>

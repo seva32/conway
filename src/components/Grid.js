@@ -7,14 +7,14 @@ import PropTypes from 'prop-types';
 import randomKey from '../utils/randomKey';
 import nextTick from './Grid.NextTick';
 import useInterval from '../utils/useInterval';
+import Cell from './Cell';
 
-function Grid({ row, col }) {
+function Grid({ row, col, paused }) {
   const [matrix, setMatrix] = React.useState(
     Array.from({ length: row }, () => Array.from({ length: col }, () => false)),
   );
 
   const [count, setCount] = React.useState(0);
-  const [paused, setPaused] = React.useState(false);
   const [reset, setReset] = React.useState(false);
 
   React.useEffect(() => {
@@ -39,21 +39,18 @@ function Grid({ row, col }) {
 
   const intervalRef = useInterval(
     () => {
-      if (count < 10) {
+      if (count < 100) {
         setCount(count + 1);
         nextGen();
       } else {
         window.clearInterval(intervalRef.current);
       }
     },
-    paused ? null : 2000,
+    paused ? null : 300,
   );
 
   return (
     <div>
-      <button onClick={() => setPaused(!paused)} type="button">
-        pause
-      </button>
       <button onClick={() => setReset(true)} type="button">
         reset
       </button>
@@ -63,15 +60,12 @@ function Grid({ row, col }) {
             <tr key={randomKey()}>
               {rowMatrix.map((_column, columnIndex) => (
                 <td key={randomKey()}>
-                  <button
-                    type="button"
+                  <Cell
                     onClick={() => handleChange(rowIndex, columnIndex)}
-                    className={`${
-                      matrix[rowIndex][columnIndex] ? 'bg-lime' : 'bg-united'
-                    }`}
+                    life={matrix[rowIndex][columnIndex]}
                   >
                     {matrix[rowIndex][columnIndex] ? 'true' : 'false'}
-                  </button>
+                  </Cell>
                 </td>
               ))}
             </tr>
@@ -85,6 +79,7 @@ function Grid({ row, col }) {
 Grid.propTypes = {
   row: PropTypes.number.isRequired,
   col: PropTypes.number.isRequired,
+  paused: PropTypes.bool.isRequired,
 };
 
 export default Grid;
