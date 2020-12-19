@@ -19,6 +19,9 @@
         "react-hooks"
     ],
     "rules": {
+        "function-paren-newline": [
+            "warn"
+        ],
         "global-require": "off",
         "operator-linebreak": "off",
         "react/jsx-props-no-spreading": "off",
