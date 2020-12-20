@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 function Cell({ life, onClick, children }) {
   return (
     <button
-      className={`rounded-full flex justify-center items-center ${
-        life ? 'bg-black m-0' : 'bg-grey scale-100'
+      className={`absolute w-full h-full rounded-lg flex justify-center items-center ${
+        life ? 'bg-black m-0' : 'bg-grey bg-opacity-40'
       }`}
       type="button"
       onClick={onClick}

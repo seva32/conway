@@ -312,6 +312,10 @@ h3 {
   top: -3rem;
 }
 
+.square-ratio {
+  padding-bottom: 100%;
+}
+
 @responsive {
   .background-smooth {
     background-color: rgba(0, 0, 0, 0.4);

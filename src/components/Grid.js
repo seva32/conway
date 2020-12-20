@@ -62,24 +62,28 @@ const Grid = React.forwardRef(
       paused ? null : interval,
     );
 
+    const width = 'w-2/5';
+
     return (
-      <div className="w-full max-w-full max-h-full flex justify-center items-center relative">
+      <div className="w-full max-w-full max-h-full flex justify-center items-center relative mt-16">
         <div className="absolute top-3remneg font-button text-white">
           Generation:&nbsp;
           <font size="+2">{count}</font>
         </div>
-        <table className="table-fixed w-full" role="grid">
+        <table className={`table-fixed ${width}`} role="grid">
           <tbody>
             {matrix.map((rowMatrix, rowIndex) => (
               <tr key={randomKey()}>
                 {rowMatrix.map((_column, columnIndex) => (
-                  <td key={randomKey()} className="" roll="gridcell">
-                    <Cell
-                      onClick={() => handleChange(rowIndex, columnIndex)}
-                      life={matrix[rowIndex][columnIndex]}
-                    >
-                      {matrix[rowIndex][columnIndex] ? <Neon /> : 'false'}
-                    </Cell>
+                  <td key={randomKey()} className="relative" roll="gridcell">
+                    <div className="relative square-ratio">
+                      <Cell
+                        onClick={() => handleChange(rowIndex, columnIndex)}
+                        life={matrix[rowIndex][columnIndex]}
+                      >
+                        {matrix[rowIndex][columnIndex] && <Neon />}
+                      </Cell>
+                    </div>
                   </td>
                 ))}
               </tr>

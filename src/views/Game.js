@@ -92,7 +92,7 @@ function Game({ location, match }) {
       {/* buttons */}
       <div className="w-full h-1/5 text-white flex flex-col justify-center items-center">
         <div className="w-full h-1/2 flex justify-center items-center">
-          <h2 className="uppercase">{user}</h2>
+          <h2 className="uppercase relative">{user}</h2>
         </div>
 
         <div className="w-full h-1/2 min-h-4rem flex justify-between items-center flex-1">
@@ -139,7 +139,7 @@ function Game({ location, match }) {
       </div>
 
       {/* grid and generation count */}
-      <div className="h-4/5 w-full flex flex-nowrap justify-center items-center flex-1 mb-8 text-white">
+      <div className="w-full flex flex-nowrap justify-center items-center flex-1 text-white">
         <Grid
           row={row}
           col={col}
