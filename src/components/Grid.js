@@ -63,25 +63,22 @@ const Grid = React.forwardRef(
     );
 
     return (
-      <div className="w-full h-full flex justify-center items-center relative">
-        <div className="absolute top-8 font-button text-white">
+      <div className="w-full max-w-full max-h-full flex justify-center items-center relative">
+        <div className="absolute top-3remneg font-button text-white">
           Generation:&nbsp;
           <font size="+2">{count}</font>
         </div>
-        <table className="table-auto w-full h-full">
+        <table className="table-fixed w-full" role="grid">
           <tbody>
             {matrix.map((rowMatrix, rowIndex) => (
               <tr key={randomKey()}>
                 {rowMatrix.map((_column, columnIndex) => (
-                  <td
-                    key={randomKey()}
-                    className="min-w-20px min-h-20px mx-auto"
-                  >
+                  <td key={randomKey()} className="" roll="gridcell">
                     <Cell
                       onClick={() => handleChange(rowIndex, columnIndex)}
                       life={matrix[rowIndex][columnIndex]}
                     >
-                      {matrix[rowIndex][columnIndex] ? <Neon /> : ''}
+                      {matrix[rowIndex][columnIndex] ? <Neon /> : 'false'}
                     </Cell>
                   </td>
                 ))}

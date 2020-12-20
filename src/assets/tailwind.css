@@ -308,6 +308,10 @@ h3 {
   min-height: 4rem;
 }
 
+.top-3remneg {
+  top: -3rem;
+}
+
 @responsive {
   .background-smooth {
     background-color: rgba(0, 0, 0, 0.4);

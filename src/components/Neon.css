@@ -1,6 +1,5 @@
 .neon-wrapper {
-  width: 115%;
-  height: 115%;
+  max-width: 100%;
 }
 
 .st0 {

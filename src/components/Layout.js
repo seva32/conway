@@ -62,7 +62,7 @@ function Layout({ children }) {
   }, []);
 
   const hero = () => (
-    <div className={`hero-style ${hideHero ? 'hidden' : 'flex'}`}>
+    <div className={`hero-style ${hideHero ? 'hidden' : 'flex'} w-full`}>
       <div className="hero-container">
         <div className="hero-circle" />
         <div className="hero-frame" />
