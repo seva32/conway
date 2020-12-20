@@ -1,11 +1,5 @@
 :root {
-  --purple: #5c27c1ff;
-  --blue-purple: #9dacffff;
-  --baby-powder: #fffffaff;
-  --ruby: #d81159ff;
-  --ruby-light: rgb(211, 132, 161);
   --dirty-white: #f2f2f2;
-  --jet: #333138;
 }
 
 @tailwind base;
@@ -24,7 +18,6 @@ body {
 html,
 body {
   height: 100%;
-  outline: 1px solid red;
 }
 
 .layout-container {
@@ -147,14 +140,6 @@ h3 {
   line-height: 1.8rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-}
-
-.font-2rem {
-  font-size: 2rem;
-}
-
-.page-min-h {
-  height: calc(100vh - 10rem);
 }
 
 /* hero screen start */
@@ -284,14 +269,43 @@ h3 {
   z-index: -1;
 }
 
+.font-2rem {
+  font-size: 2rem;
+}
+
+.page-min-h {
+  height: calc(100vh - 10rem);
+}
+
+.min-w-20px {
+  min-width: 20px;
+}
+
+.min-h-20px {
+  min-height: 20px;
+}
 /* hero screen end */
 
 .card-inset {
+  border-radius: 10px;
   box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de,
-    0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de,
+    0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 65px #ff00de,
     inset 0 0 5px #fff, inset 0 0 10px #fff, inset 0 0 15px #fff,
     inset 0 0 20px #ff00de, inset 0 0 35px #ff00de, inset 0 0 40px #ff00de,
-    inset 0 0 50px #ff00de, inset 0 0 75px #ff00de;
+    inset 0 0 50px #ff00de, inset 0 0 65px #ff00de;
+}
+
+.button-inset {
+  border-radius: 10px;
+  box-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 8px #fff, 0 0 10px #ff00de,
+    0 0 20px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 35px #ff00de,
+    inset 0 0 3px #fff, inset 0 0 5px #fff, inset 0 0 8px #fff,
+    inset 0 0 10px #ff00de, inset 0 0 25px #ff00de, inset 0 0 20px #ff00de,
+    inset 0 0 25px #ff00de, inset 0 0 35px #ff00de;
+}
+
+.min-h-4rem {
+  min-height: 4rem;
 }
 
 @responsive {

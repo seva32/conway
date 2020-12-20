@@ -3,4 +3,5 @@ module.exports = {
   black: '#000000',
   transparent: 'transparent',
   pink: '#ff00de',
+  grey: '#504669',
 };

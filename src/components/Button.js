@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Button({ children, submit }) {
+function Button({ children, submit, onClick, disabled }) {
   return (
-    <div>
-      <button type={submit ? 'submit' : 'button'}>{children}</button>
-    </div>
+    <button
+      type={submit ? 'submit' : 'button'}
+      onClick={onClick}
+      disabled={disabled}
+      className="w-full h-16 button-inset flex justify-center items-center font-button"
+    >
+      {children}
+    </button>
   );
 }
 
@@ -15,10 +20,14 @@ Button.propTypes = {
     PropTypes.node,
   ]).isRequired,
   submit: PropTypes.bool,
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
   submit: false,
+  onClick: () => {},
+  disabled: false,
 };
 
 export default Button;

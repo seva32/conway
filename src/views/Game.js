@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Grid } from '../components';
+import { Grid, Button } from '../components';
 
 function Game({ location, match }) {
   const [paused, setPaused] = React.useState(true);
@@ -89,32 +89,57 @@ function Game({ location, match }) {
         } bg-honeydew opacity-75 w-screen h-screen inset-0 z-10`}
       />
 
-      {/* main content */}
-      <div className="w-full h-2/5 text-white">
-        <h1>{user}</h1>
-        <button onClick={() => setPaused(!paused)} type="button">
-          {paused ? 'paused' : 'playing'}
-        </button>
-        <button onClick={() => setReset(true)} type="button">
-          reset
-        </button>
-        <button onClick={() => setShowModal(true)} type="button">
-          Change default interval: {intervalValue}
-        </button>
-        <button type="button" onClick={() => setStep(!step)}>
-          Manual step
-        </button>
-        {step && (
-          <button type="button" onClick={() => setCount(count + 1)}>
-            +
-          </button>
-        )}
-        <button type="button" onClick={saveGame}>
-          Save game
-        </button>
+      {/* buttons */}
+      <div className="w-full h-1/5 text-white flex flex-col justify-center items-center">
+        <div className="w-full h-1/2 flex justify-center items-center">
+          <h2 className="uppercase">{user}</h2>
+        </div>
+
+        <div className="w-full h-1/2 min-h-4rem flex justify-between items-center flex-1">
+          <div className="w-1/5 h-full p-4 flex justify-center items-center">
+            <Button onClick={() => setShowModal(true)}>
+              Change interval:&nbsp;
+              {intervalValue}
+            </Button>
+          </div>
+          <div className="w-1/5 h-full p-4 flex justify-center items-center">
+            <Button onClick={() => setReset(true)}>reset</Button>
+          </div>
+          <div className="w-1/5 h-full p-4 flex justify-center items-center">
+            <Button onClick={() => setPaused(!paused)}>
+              <font size="+2">{paused ? 'play!' : 'pause'}</font>
+            </Button>
+          </div>
+          <div className="w-1/5 h-full p-4 flex flex-row flex-nowrap justify-center items-center">
+            <div
+              className={`${
+                step ? 'w-4/5 mr-2' : 'w-full'
+              } h-full flex justify-center items-center`}
+            >
+              <Button onClick={() => setStep(!step)}>Manual step</Button>
+            </div>
+            <div
+              className={`${
+                step
+                  ? 'flex justify-center items-center w-1/5 h-full'
+                  : 'hidden'
+              }`}
+            >
+              <Button onClick={() => setCount(count + 1)} disabled={!step}>
+                <font size="+2">+</font>
+              </Button>
+            </div>
+          </div>
+          <div className="w-1/5 h-full p-4 flex justify-center items-center">
+            <Button type="button" onClick={saveGame}>
+              Save game
+            </Button>
+          </div>
+        </div>
       </div>
 
-      <div className="h-3/5 w-full flex flex-nowrap justify-center items-center flex-1 mb-8 text-white">
+      {/* grid and generation count */}
+      <div className="h-4/5 w-full flex flex-nowrap justify-center items-center flex-1 mb-8 text-white">
         <Grid
           row={row}
           col={col}

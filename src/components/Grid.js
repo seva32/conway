@@ -8,6 +8,7 @@ import randomKey from '../utils/randomKey';
 import nextTick from './Grid.NextTick';
 import useInterval from '../utils/useInterval';
 import Cell from './Cell';
+import Neon from './Neon';
 
 const Grid = React.forwardRef(
   (
@@ -62,19 +63,25 @@ const Grid = React.forwardRef(
     );
 
     return (
-      <div>
-        <div>Generacion: {count}</div>
-        <table>
+      <div className="w-full h-full flex justify-center items-center relative">
+        <div className="absolute top-8 font-button text-white">
+          Generation:&nbsp;
+          <font size="+2">{count}</font>
+        </div>
+        <table className="table-auto w-full h-full">
           <tbody>
             {matrix.map((rowMatrix, rowIndex) => (
               <tr key={randomKey()}>
                 {rowMatrix.map((_column, columnIndex) => (
-                  <td key={randomKey()}>
+                  <td
+                    key={randomKey()}
+                    className="min-w-20px min-h-20px mx-auto"
+                  >
                     <Cell
                       onClick={() => handleChange(rowIndex, columnIndex)}
                       life={matrix[rowIndex][columnIndex]}
                     >
-                      {matrix[rowIndex][columnIndex] ? 'true' : 'false'}
+                      {matrix[rowIndex][columnIndex] ? <Neon /> : ''}
                     </Cell>
                   </td>
                 ))}

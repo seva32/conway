@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 function Cell({ life, onClick, children }) {
   return (
     <button
-      className={`inline ${life ? 'text-united' : 'text-space'} bg-lime`}
+      className={`min-w-20px min-h-20px w-5 h-5 m-1 rounded-md flex justify-center items-center ${
+        life ? 'bg-black m-0 scale-150' : 'bg-grey scale-100'
+      }`}
       type="button"
       onClick={onClick}
     >
