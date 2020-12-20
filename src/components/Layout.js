@@ -67,7 +67,7 @@ function Layout({ children }) {
         <div className="hero-circle" />
         <div className="hero-frame" />
         <div className="hero-text">Game of Life</div>
-        <div className="final-text final-text-name">Game of Life</div>
+        <div className="final-text final-text-name font-logo">Game of Life</div>
       </div>
     </div>
   );
@@ -75,20 +75,27 @@ function Layout({ children }) {
   return (
     <>
       {hero()}
-      <div className="layout-container" id="layout">
-        <nav>
-          <ul className="flex flex-nowrap justify-start p-8">
+      <div className="layout-container bg-black" id="layout">
+        <nav className="w-4/5 h-24 mx-auto flex justify-between items-center">
+          <ul className="w-1/3 flex flex-nowrap justify-between items-center text-white font-link uppercase">
             <li>
               <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/rules">Rules</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
             </li>
           </ul>
+          <div className="font-logo font-2rem text-white final-text-name">
+            Game of Life
+          </div>
         </nav>
+        <hr className="text-white" />
         {children}
-        <footer className="layout-footer h-16 flex justify-center items-center">
-          Footer
+        <footer className="layout-footer h-16 flex justify-center items-center border-white border-t font-body text-white">
+          sebastianfantini.com - 2020
         </footer>
       </div>
     </>

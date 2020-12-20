@@ -59,11 +59,12 @@ function Game({ location, match }) {
   };
 
   return (
-    <div className="z-0 relative">
+    <div className="w-4/5 page-min-h mx-auto flex flex-col justify-center items-center overflow-hidden">
+      {/* modal & backdrop */}
       <div
         className={`fixed ${
           showModal ? 'block' : 'hidden'
-        } bg-united h-12 w-12 top-0 z-20`}
+        } bg-white h-12 w-12 top-0 z-20`}
       >
         Modal
         <label htmlFor="interval">
@@ -87,7 +88,9 @@ function Game({ location, match }) {
           showModal ? 'block' : 'hidden'
         } bg-honeydew opacity-75 w-screen h-screen inset-0 z-10`}
       />
-      <div className="flex flex-col justify-center items-center w-full h-full min-h-screen">
+
+      {/* main content */}
+      <div className="w-full h-2/5 text-white">
         <h1>{user}</h1>
         <button onClick={() => setPaused(!paused)} type="button">
           {paused ? 'paused' : 'playing'}
@@ -109,6 +112,9 @@ function Game({ location, match }) {
         <button type="button" onClick={saveGame}>
           Save game
         </button>
+      </div>
+
+      <div className="h-3/5 w-full flex flex-nowrap justify-center items-center flex-1 mb-8 text-white">
         <Grid
           row={row}
           col={col}

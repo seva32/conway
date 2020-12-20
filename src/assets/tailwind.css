@@ -6,7 +6,6 @@
   --ruby-light: rgb(211, 132, 161);
   --dirty-white: #f2f2f2;
   --jet: #333138;
-  outline: 1px solid red;
 }
 
 @tailwind base;
@@ -25,6 +24,7 @@ body {
 html,
 body {
   height: 100%;
+  outline: 1px solid red;
 }
 
 .layout-container {
@@ -135,8 +135,8 @@ h3 {
   font-family: 'Roboto Slab', serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.25rem;
+  font-size: 1.25rem;
+  line-height: 1.4rem;
 }
 
 .font-link-spaced {
@@ -151,6 +151,10 @@ h3 {
 
 .font-2rem {
   font-size: 2rem;
+}
+
+.page-min-h {
+  height: calc(100vh - 10rem);
 }
 
 /* hero screen start */
@@ -247,8 +251,11 @@ h3 {
   opacity: 0;
 }
 
-.final-text {
+.font-logo {
   font-family: 'Pacifico', cursive;
+}
+
+.final-text {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -273,7 +280,19 @@ h3 {
   font-size: 20rem;
 }
 
+.z-negative {
+  z-index: -1;
+}
+
 /* hero screen end */
+
+.card-inset {
+  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de,
+    0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de,
+    inset 0 0 5px #fff, inset 0 0 10px #fff, inset 0 0 15px #fff,
+    inset 0 0 20px #ff00de, inset 0 0 35px #ff00de, inset 0 0 40px #ff00de,
+    inset 0 0 50px #ff00de, inset 0 0 75px #ff00de;
+}
 
 @responsive {
   .background-smooth {
