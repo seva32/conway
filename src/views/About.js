@@ -1,7 +1,13 @@
 import React from 'react';
 
+import Neon from '../components/Neon';
+
 function About() {
-  return <div>About</div>;
+  return (
+    <div>
+      <Neon />
+    </div>
+  );
 }
 
 export default About;
