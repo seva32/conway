@@ -13,7 +13,15 @@ function Game({ location, match }) {
   const col = location.search
     ? Number(location.search.split('=')[2].split('&')[0])
     : 4;
-  const load = location.search && location.search.split('&')[2];
+  const load =
+    location.search &&
+    location.search.split('&')[2] &&
+    location.search.split('&')[2].includes('load');
+  const pattern =
+    location.search &&
+    location.search.split('&')[2] &&
+    location.search.split('&')[2].includes('pattern') &&
+    location.search.split('&')[2].split('=')[1];
 
   const [count, setCount] = React.useState(0);
   const [step, setStep] = React.useState(false);
@@ -169,6 +177,7 @@ function Game({ location, match }) {
           step={step}
           ref={matrixRef}
           loadSavedMatrix={loadSavedMatrix}
+          pattern={pattern || ''}
         />
       </div>
     </div>

@@ -348,6 +348,10 @@ h3 {
   width: 80vw;
 }
 
+.will-change {
+  will-change: transform;
+}
+
 @responsive {
   .background-smooth {
     background-color: rgba(0, 0, 0, 0.4);

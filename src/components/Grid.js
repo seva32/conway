@@ -3,6 +3,7 @@
 /* eslint-disable no-plusplus */
 import React from 'react';
 import PropTypes from 'prop-types';
+import isEmpty from 'lodash.isempty';
 
 import randomKey from '../utils/randomKey';
 import nextTick from './Grid.NextTick';
@@ -12,7 +13,17 @@ import Neon from './Neon';
 
 const Grid = React.forwardRef(
   (
-    { row, col, paused, count, setCount, interval, step, loadSavedMatrix },
+    {
+      row,
+      col,
+      paused,
+      count,
+      setCount,
+      interval,
+      step,
+      loadSavedMatrix,
+      pattern,
+    },
     ref,
   ) => {
     const [matrix, setMatrix] = React.useState(
@@ -47,6 +58,19 @@ const Grid = React.forwardRef(
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [step, count]);
+
+    React.useEffect(() => {
+      if (!isEmpty(pattern)) {
+        const copy = [...matrix];
+        copy[1][0] = true;
+        copy[2][1] = true;
+        copy[2][2] = true;
+        copy[1][2] = true;
+        copy[0][2] = true;
+        setMatrix(copy);
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     // esta funcion escucha eventos sobre cada celula
     const handleChange = (rowIdx, columnIdx) => {
@@ -86,7 +110,7 @@ const Grid = React.forwardRef(
                         onClick={() => handleChange(rowIndex, columnIndex)}
                         life={matrix[rowIndex][columnIndex]}
                       >
-                        {matrix[rowIndex][columnIndex] && <Neon />}
+                        {matrix[rowIndex][columnIndex] && 'true'}
                       </Cell>
                     </div>
                   </td>
@@ -109,6 +133,7 @@ Grid.propTypes = {
   interval: PropTypes.number.isRequired,
   step: PropTypes.bool.isRequired,
   loadSavedMatrix: PropTypes.bool.isRequired,
+  pattern: PropTypes.string.isRequired,
 };
 
 export default Grid;

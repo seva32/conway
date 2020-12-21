@@ -13,7 +13,7 @@ function Layout({ children }) {
     );
     textWrapper.innerHTML = textWrapper.textContent.replace(
       /\S/g,
-      "<div class='hero-letter font-20rem flex justify-center items-center'>$&</div>",
+      "<div class='hero-letter font-20rem flex justify-center items-center will-change'>$&</div>",
     );
 
     animationRef.current = anime.timeline({

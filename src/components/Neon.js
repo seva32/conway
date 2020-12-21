@@ -48,7 +48,7 @@ function Neon(props) {
             <g>
               <g>
                 <path
-                  className="st0 letter"
+                  className="st0 letter will-change"
                   id="N"
                   d="M 120 120 A 50 50 0 1 1 280 280 A 50 50 0 1 1 115 126 L 133 143 A 50 50 0 1 0 262 261 A 50 50 0 1 0 139 139 Z"
                 />

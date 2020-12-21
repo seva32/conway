@@ -122,14 +122,14 @@ function Home({ history }) {
           <span className="font-logo">Game of Life</span>
         </h1>
         <h2 className="text-white w-full h-2/5 flex justify-center items-start">
-          You can find more INFO about this game
+          Find more INFO about this game
           <span>
             <Link to="/rules">&nbsp;HERE</Link>
           </span>
         </h2>
       </div>
       <div
-        className="h-80 w-full flex flex-nowrap justify-center items-center flex-1 pb-16"
+        className="h-80 w-full flex flex-nowrap justify-center items-center flex-1 pb-16 will-change"
         id="cards"
       >
         <Card
@@ -151,6 +151,13 @@ function Home({ history }) {
             new game
           </h2>
         </Card>
+        <Card
+          onClick={() =>
+            history.push('/game/glider?row=8&col=8&pattern=glider')
+          }
+        >
+          <h2 className="uppercase text-white">load pattern</h2>
+        </Card>
         <Card onClick={() => setShowSavedGame(true)}>
           <h2 className="uppercase text-white">load saved game</h2>
         </Card>
@@ -159,7 +166,7 @@ function Home({ history }) {
       {/* form fields */}
       <div
         id="game-form"
-        className="h-96 w-3/5 absolute bottom-40 z-negative flex flex-col flex-1 card-inset py-14"
+        className="h-96 w-3/5 absolute bottom-40 z-negative flex flex-col flex-1 card-inset py-14 will-change"
       >
         <Label textColor="white" htmlFor="user">
           <span className="w-1/2 text-right">Username:&nbsp;</span>
