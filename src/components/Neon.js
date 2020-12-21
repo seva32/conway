@@ -7,6 +7,7 @@ function Neon() {
     const pathEls = document.querySelectorAll(
       '.neon-wrapper .neon svg g g path',
     );
+
     for (let i = 0; i < pathEls.length; i++) {
       const pathEl = pathEls[i];
       const offset = anime.setDashoffset(pathEl);
