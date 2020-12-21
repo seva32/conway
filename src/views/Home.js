@@ -238,7 +238,7 @@ function Home({ history }) {
           <span className="w-1/2 text-right">Matrix size:&nbsp;</span>
           <input
             className="w-1/2 mr-40 rounded-md px-4 text-black"
-            id="date-saved"
+            id="matrix-saved"
             value={
               !isEmpty(savedGame)
                 ? `Rows: ${savedGame.row} - Columns: ${savedGame.col}`
@@ -247,11 +247,11 @@ function Home({ history }) {
             readOnly
           />
         </Label>
-        <Label htmlFor="matrix-saved" textColor="white">
+        <Label htmlFor="generation-saved" textColor="white">
           <span className="w-1/2 text-right">Generation:&nbsp;</span>
           <input
             className="w-1/2 mr-40 rounded-md px-4 text-black"
-            id="date-saved"
+            id="generation-saved"
             value={!isEmpty(savedGame) ? savedGame.generation : ''}
             readOnly
           />
