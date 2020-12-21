@@ -59,7 +59,7 @@ function Game({ location, match }) {
   };
 
   return (
-    <div className="w-4/5 page-min-h mx-auto flex flex-col justify-center items-center overflow-hidden">
+    <div className="w-4/5 mx-auto block relative min-h-97rem">
       {/* modal & backdrop */}
       <div
         className={`fixed ${
@@ -90,12 +90,12 @@ function Game({ location, match }) {
       />
 
       {/* buttons */}
-      <div className="w-full h-1/5 text-white flex flex-col justify-center items-center">
-        <div className="w-full h-1/2 flex justify-center items-center">
+      <div className="w-full relative h-48 text-white block">
+        <div className="w-full h-24 flex justify-center items-center">
           <h2 className="uppercase relative">{user}</h2>
         </div>
 
-        <div className="w-full h-1/2 min-h-4rem flex justify-between items-center flex-1">
+        <div className="w-full h-24 min-h-4rem flex justify-between items-center flex-1">
           <div className="w-1/5 h-full p-4 flex justify-center items-center">
             <Button onClick={() => setShowModal(true)}>
               Change interval:&nbsp;
@@ -139,7 +139,7 @@ function Game({ location, match }) {
       </div>
 
       {/* grid and generation count */}
-      <div className="w-full flex flex-nowrap justify-center items-center flex-1 text-white">
+      <div className="w-full h-75rem relative block text-white">
         <Grid
           row={row}
           col={col}

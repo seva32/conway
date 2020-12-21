@@ -62,15 +62,15 @@ const Grid = React.forwardRef(
       paused ? null : interval,
     );
 
-    const width = 'w-2/5';
+    const width = 'w-3/5';
 
     return (
-      <div className="w-full max-w-full max-h-full flex justify-center items-center relative mt-16">
-        <div className="absolute top-3remneg font-button text-white">
+      <div className="w-full max-w-full max-h-75rem flex justify-center items-start pt-20">
+        <div className="absolute top-8 font-button text-white">
           Generation:&nbsp;
           <font size="+2">{count}</font>
         </div>
-        <table className={`table-fixed ${width}`} role="grid">
+        <table className={`table-fixed ${width} max-h-75rem`} role="grid">
           <tbody>
             {matrix.map((rowMatrix, rowIndex) => (
               <tr key={randomKey()}>

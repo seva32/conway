@@ -23,6 +23,7 @@ function Home({ history }) {
     if (showForm) {
       animationRef.current = anime.timeline({
         duration: 2000,
+        easing: 'easeInQuart',
       });
 
       animationRef.current
@@ -70,6 +71,7 @@ function Home({ history }) {
         setSavedGame(savedUserData);
         animationRef.current = anime.timeline({
           duration: 2000,
+          easing: 'easeInQuart',
         });
 
         animationRef.current
@@ -113,8 +115,8 @@ function Home({ history }) {
   }, [history, savedGame.col, savedGame.row, savedGame.user, submitSavedGame]);
 
   return (
-    <div className="w-4/5 page-min-h mx-auto flex flex-col justify-center items-center overflow-hidden">
-      <div className="w-full h-2/5">
+    <div className="w-4/5 min-h-screen mx-auto flex flex-col justify-center items-center -mt-24">
+      <div className="w-full mt-24 h-80">
         <h1 className="text-white w-full h-3/5 flex justify-center items-center">
           <span className="uppercase">welcome to&nbsp;</span>
           <span className="font-logo">Game of Life</span>
@@ -127,7 +129,7 @@ function Home({ history }) {
         </h2>
       </div>
       <div
-        className="h-3/5 w-full flex flex-nowrap justify-center items-center flex-1 mb-8"
+        className="h-80 w-full flex flex-nowrap justify-center items-center flex-1 pb-16"
         id="cards"
       >
         <Card

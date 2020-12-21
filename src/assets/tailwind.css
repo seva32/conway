@@ -23,7 +23,7 @@ body {
 .layout-container {
   position: relative;
   height: auto !important;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .layout-footer {
@@ -273,10 +273,6 @@ h3 {
   font-size: 2rem;
 }
 
-.page-min-h {
-  height: calc(100vh - 10rem);
-}
-
 .min-w-20px {
   min-width: 20px;
 }
@@ -314,6 +310,18 @@ h3 {
 
 .square-ratio {
   padding-bottom: 100%;
+}
+
+.h-75rem {
+  height: 75rem;
+}
+
+.max-h-75rem {
+  max-height: 75rem;
+}
+
+.min-h-97rem {
+  min-height: 97rem;
 }
 
 @responsive {
