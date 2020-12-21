@@ -59,7 +59,7 @@ function Game({ location, match }) {
   };
 
   return (
-    <div className="w-4/5 mx-auto block relative min-h-97rem">
+    <div className="w-4/5 mx-auto block relative min-h-screen">
       {/* modal & backdrop */}
       <div
         className={`fixed ${
@@ -139,7 +139,11 @@ function Game({ location, match }) {
       </div>
 
       {/* grid and generation count */}
-      <div className="w-full h-75rem relative block text-white">
+      <div
+        className={`relative block text-white mx-auto pb-32 w-${
+          col < 10 ? `${(col - 1) * 10}vw` : 'w-80vw'
+        }`}
+      >
         <Grid
           row={row}
           col={col}
