@@ -1,11 +1,8 @@
 /* eslint-disable no-plusplus */
 import React from 'react';
-import PropTypes from 'prop-types';
 import anime from 'animejs';
 
-import './Neon.css';
-
-function Neon(props) {
+function Neon() {
   React.useEffect(() => {
     const pathEls = document.querySelectorAll(
       '.neon-wrapper .neon svg g g path',
@@ -44,42 +41,24 @@ function Neon(props) {
     <div>
       <div className="neon-wrapper">
         <div className="neon">
-          <svg version="1.1" id="BG" x="0px" y="0px" viewBox="0 0 400 400">
+          <svg
+            version="1.1"
+            id="BG"
+            x="0px"
+            y="0px"
+            viewBox="0 0 400 400"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <g>
               <g>
                 <path
-                  className="st0 letter will-change"
-                  id="N"
+                  className="st1 will-change"
                   d="M 120 120 A 50 50 0 1 1 280 280 A 50 50 0 1 1 115 126 L 133 143 A 50 50 0 1 0 262 261 A 50 50 0 1 0 139 139 Z"
                 />
               </g>
               <g>
                 <path
-                  className="st1"
-                  d="M 120 120 A 50 50 0 1 1 280 280 A 50 50 0 1 1 115 126 L 133 143 A 50 50 0 1 0 262 261 A 50 50 0 1 0 139 139 Z"
-                />
-              </g>
-              <g>
-                <path
-                  className="st2"
-                  d="M 20 20 L 380 20 L 380 380 L 20 380 L 20 60 L 60 60 L 60 340 L 340 340 L 340 60 L 20 60 Z"
-                />
-              </g>
-              <g>
-                <path
-                  className="st3"
-                  d="M 20 20 L 380 20 L 380 380 L 20 380 L 20 60 L 60 60 L 60 340 L 340 340 L 340 60 L 20 60 Z"
-                />
-              </g>
-              <g>
-                <path
-                  className="st4"
-                  d="M 20 20 L 380 20 L 380 380 L 20 380 L 20 60 L 60 60 L 60 340 L 340 340 L 340 60 L 20 60 Z"
-                />
-              </g>
-              <g>
-                <path
-                  className="st5"
+                  className="st4 will-change"
                   d="M 20 20 L 380 20 L 380 380 L 20 380 L 20 60 L 60 60 L 60 340 L 340 340 L 340 60 L 20 60 Z"
                 />
               </g>

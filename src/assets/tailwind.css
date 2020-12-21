@@ -282,6 +282,59 @@ h3 {
 }
 /* hero screen end */
 
+/* neon ani start */
+
+.neon-wrapper {
+  max-width: 100%;
+}
+
+.st0 {
+  fill: #29abe2;
+}
+.st1 {
+  fill: none;
+  stroke: #ff00db;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 0, 25, 175;
+}
+.st2 {
+  fill: none;
+  stroke: #2e00ed;
+  stroke-width: 4;
+  stroke-miterlimit: 100;
+  stroke-dasharray: 0, 54, 101;
+}
+
+.st3 {
+  fill: none;
+  stroke: #f70285;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 100;
+  stroke-dasharray: 0, 37, 129;
+}
+.st4 {
+  fill: none;
+  stroke: #ff0400;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 0, 36, 136;
+}
+.st5 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 0, 36, 136;
+}
+
+/* neon ani ends */
+
 .card-inset {
   border-radius: 10px;
   box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de,

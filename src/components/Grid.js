@@ -110,7 +110,7 @@ const Grid = React.forwardRef(
                         onClick={() => handleChange(rowIndex, columnIndex)}
                         life={matrix[rowIndex][columnIndex]}
                       >
-                        {matrix[rowIndex][columnIndex] && 'true'}
+                        {matrix[rowIndex][columnIndex] && <Neon />}
                       </Cell>
                     </div>
                   </td>
