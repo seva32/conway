@@ -21,6 +21,12 @@ const Grid = React.forwardRef(
       ),
     );
 
+    // esta funcion va a determinar el proximo estado de cada celula
+    // segun la vitalidad de cada celula vecina
+    const nextGen = () => {
+      setMatrix(nextTick(matrix, row, col));
+    };
+
     React.useEffect(() => {
       // eslint-disable-next-line no-param-reassign
       ref.current = matrix;
@@ -35,6 +41,13 @@ const Grid = React.forwardRef(
       }
     }, [loadSavedMatrix]);
 
+    React.useEffect(() => {
+      if (step && count) {
+        nextGen();
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [step, count]);
+
     // esta funcion escucha eventos sobre cada celula
     const handleChange = (rowIdx, columnIdx) => {
       const copy = [...matrix];
@@ -42,17 +55,9 @@ const Grid = React.forwardRef(
       setMatrix(copy);
     };
 
-    // esta funcion va a determinar el proximo estado de cada celula
-    // segun la vitalidad de cada celula vecina
-    const nextGen = () => {
-      setMatrix(nextTick(matrix, row, col));
-    };
-
     const intervalRef = useInterval(
       () => {
-        if (step) {
-          nextGen();
-        } else if (count < 100000) {
+        if (count < 100000) {
           setCount(count + 1);
           nextGen();
         } else {

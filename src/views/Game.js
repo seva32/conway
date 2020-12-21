@@ -19,7 +19,7 @@ function Game({ location, match }) {
   const [step, setStep] = React.useState(false);
   const [reset, setReset] = React.useState(false);
   const [intervalValue, setIntervalValue] = React.useState(300);
-  const [showModal, setShowModal] = React.useState(false);
+  const [showInterval, setShowInterval] = React.useState(false);
   const matrixRef = React.createRef(null);
   const [loadSavedMatrix, setLoadSavedMatrix] = React.useState(false);
 
@@ -60,35 +60,6 @@ function Game({ location, match }) {
 
   return (
     <div className="w-4/5 mx-auto block relative min-h-screen">
-      {/* modal & backdrop */}
-      <div
-        className={`fixed ${
-          showModal ? 'block' : 'hidden'
-        } bg-white h-12 w-12 top-0 z-20`}
-      >
-        Modal
-        <label htmlFor="interval">
-          <input
-            value={intervalValue}
-            onChange={(e) =>
-              setIntervalValue(parseInt(e.target.value, 10) || 300)
-            }
-            type="number"
-            id="interval"
-            name="interval"
-            pattern="\d*"
-          />
-        </label>
-        <button type="button" onClick={() => setShowModal(false)}>
-          submit
-        </button>
-      </div>
-      <div
-        className={`fixed ${
-          showModal ? 'block' : 'hidden'
-        } bg-honeydew opacity-75 w-screen h-screen inset-0 z-10`}
-      />
-
       {/* buttons */}
       <div className="w-full relative h-48 text-white block">
         <div className="w-full h-24 flex justify-center items-center">
@@ -96,27 +67,69 @@ function Game({ location, match }) {
         </div>
 
         <div className="w-full h-24 min-h-4rem flex justify-between items-center flex-1">
-          <div className="w-1/5 h-full p-4 flex justify-center items-center">
-            <Button onClick={() => setShowModal(true)}>
-              Change interval:&nbsp;
-              {intervalValue}
-            </Button>
-          </div>
-          <div className="w-1/5 h-full p-4 flex justify-center items-center">
-            <Button onClick={() => setReset(true)}>reset</Button>
-          </div>
-          <div className="w-1/5 h-full p-4 flex justify-center items-center">
-            <Button onClick={() => setPaused(!paused)}>
-              <font size="+2">{paused ? 'play!' : 'pause'}</font>
-            </Button>
-          </div>
+          {/* change interval value */}
           <div className="w-1/5 h-full p-4 flex flex-row flex-nowrap justify-center items-center">
             <div
               className={`${
-                step ? 'w-4/5 mr-2' : 'w-full'
+                showInterval ? 'w-3/4 mr-6 relative' : 'w-full'
               } h-full flex justify-center items-center`}
             >
-              <Button onClick={() => setStep(!step)}>Manual step</Button>
+              <Button onClick={() => setShowInterval(!showInterval)}>
+                {!showInterval && (
+                  <span>
+                    Change interval:&nbsp;
+                    {intervalValue}
+                  </span>
+                )}
+                {showInterval && <span>New interval:&nbsp;</span>}
+              </Button>
+            </div>
+            <div
+              className={`${
+                showInterval
+                  ? 'flex justify-center items-center w-1/4 h-full'
+                  : 'hidden'
+              }`}
+            >
+              <input
+                value={intervalValue}
+                onChange={(e) =>
+                  setIntervalValue(parseInt(e.target.value, 10) || 300)
+                }
+                type="number"
+                id="interval"
+                name="interval"
+                pattern="\d*"
+                className="w-full h-full pl-2 rounded-lg bg-pink bg-opacity-60"
+                onKeyUp={(e) => {
+                  if (e.code === 'Enter' || e.code === 'Escape') {
+                    setShowInterval(false);
+                  }
+                }}
+              />
+            </div>
+          </div>
+
+          {/* reset */}
+          <div className="w-1/5 h-full p-4 flex justify-center items-center">
+            <Button onClick={() => setReset(true)}>reset</Button>
+          </div>
+
+          {/* play - pause */}
+          <div className="w-1/5 h-full p-4 flex justify-center items-center">
+            <Button onClick={() => setPaused(!paused)} disabled={step}>
+              <font size="+2">{paused ? 'play!' : 'pause'}</font>
+            </Button>
+          </div>
+
+          {/* step mode */}
+          <div className="w-1/5 h-full p-4 flex flex-row flex-nowrap justify-center items-center">
+            <div
+              className={`${
+                step ? 'w-4/5 mr-6 relative' : 'w-full'
+              } h-full flex justify-center items-center`}
+            >
+              <Button onClick={() => setStep(!step)}>Step mode</Button>
             </div>
             <div
               className={`${
@@ -126,10 +139,12 @@ function Game({ location, match }) {
               }`}
             >
               <Button onClick={() => setCount(count + 1)} disabled={!step}>
-                <font size="+2">+</font>
+                <font size="+1">+</font>
               </Button>
             </div>
           </div>
+
+          {/* save */}
           <div className="w-1/5 h-full p-4 flex justify-center items-center">
             <Button type="button" onClick={saveGame}>
               Save game
