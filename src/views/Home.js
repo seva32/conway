@@ -130,7 +130,7 @@ function Home({ history }) {
   }, [history, savedGame.col, savedGame.row, savedGame.user, submitSavedGame]);
 
   return (
-    <div className="w-4/5 min-h-screen mx-auto flex flex-col justify-center items-center -mt-24">
+    <div className="w-11/12 md:w-4/5 min-h-screen mx-auto flex flex-col justify-center items-center -mt-24">
       <div className="w-full mt-24 h-80">
         <h1 className="text-white w-full h-3/5 flex justify-center items-center">
           <span className="uppercase">welcome to&nbsp;</span>
@@ -144,7 +144,7 @@ function Home({ history }) {
         </h2>
       </div>
       <div
-        className="h-80 w-full flex flex-nowrap justify-center items-center flex-1 pb-16 will-change"
+        className="h-80 w-1/2 md:w-full flex flex-col md:flex-row md:flex-nowrap justify-center items-center flex-1 pb-16 will-change"
         id="cards"
       >
         <Card
@@ -160,7 +160,7 @@ function Home({ history }) {
         </Card>
         <Card onClick={() => setShowForm(true)}>
           <h2 className="uppercase text-white">
-            <font size="+3" className="block">
+            <font size="+3" className="block md:text-pink pb-2 md:pb-0">
               custom
             </font>
             new game
@@ -181,12 +181,12 @@ function Home({ history }) {
       {/* form fields */}
       <div
         id="game-form"
-        className="h-96 w-3/5 absolute bottom-40 z-negative flex flex-col flex-1 card-inset py-14 will-change"
+        className="h-96 w-3/5 absolute bottom-80 md:bottom-40 z-negative flex flex-col flex-1 card-inset py-14 will-change"
       >
         <Label textColor="white" htmlFor="user">
           <span className="w-1/2 text-right">Username:&nbsp;</span>
           <input
-            className="w-1/2 mr-40 rounded-md px-4 text-black"
+            className="w-1/2 mr-12 md:mr-40 rounded-md px-4 text-black"
             id="user"
             value={user}
             onChange={(e) => setUser(e.target.value)}
@@ -196,7 +196,7 @@ function Home({ history }) {
         <Label textColor="white" htmlFor="row">
           <span className="w-1/2 text-right">Number of rows:&nbsp;</span>
           <input
-            className="w-1/2 mr-40 rounded-md px-4 text-black"
+            className="w-1/2 mr-12 md:mr-40 rounded-md px-4 text-black"
             id="row"
             value={!isEmpty(row) ? row : ''}
             onChange={(e) => setRow(e.target.value)}
@@ -206,7 +206,7 @@ function Home({ history }) {
         <Label textColor="white" htmlFor="col">
           <span className="w-1/2 text-right">Number of columns:&nbsp;</span>
           <input
-            className="w-1/2 mr-40 rounded-md px-4 text-black"
+            className="w-1/2 mr-12 md:mr-40 rounded-md px-4 text-black"
             id="col"
             value={!isEmpty(col) ? col : ''}
             onChange={(e) => setCol(e.target.value)}
@@ -225,12 +225,12 @@ function Home({ history }) {
       {/* saved game info & submit */}
       <div
         id="saved-game"
-        className="h-96 w-2/5 absolute bottom-40 z-negative flex flex-col flex-1 card-inset py-14"
+        className="h-96 w-1/2 md:w-2/5 absolute bottom-80 md:bottom-40 z-negative flex flex-col flex-1 card-inset py-14"
       >
         <Label htmlFor="user-saved" textColor="white">
           <span className="w-1/2 text-right">Username:&nbsp;</span>
           <input
-            className="w-1/2 mr-40 rounded-md px-4 text-black"
+            className="w-1/2 mr-12 md:mr-40 rounded-md px-4 text-black"
             id="user-saved"
             value={!isEmpty(savedGame) ? savedGame.user : ''}
             readOnly
@@ -239,7 +239,7 @@ function Home({ history }) {
         <Label htmlFor="date-saved" textColor="white">
           <span className="w-1/2 text-right">Saved at:&nbsp;</span>
           <input
-            className="w-1/2 mr-40 rounded-md px-4 text-black"
+            className="w-1/2 mr-12 md:mr-40 rounded-md px-4 text-black"
             id="date-saved"
             value={
               !isEmpty(savedGame)
@@ -252,7 +252,7 @@ function Home({ history }) {
         <Label htmlFor="matrix-saved" textColor="white">
           <span className="w-1/2 text-right">Matrix size:&nbsp;</span>
           <input
-            className="w-1/2 mr-40 rounded-md px-4 text-black"
+            className="w-1/2 mr-12 md:mr-40 rounded-md px-4 text-black"
             id="matrix-saved"
             value={
               !isEmpty(savedGame)
@@ -265,7 +265,7 @@ function Home({ history }) {
         <Label htmlFor="generation-saved" textColor="white">
           <span className="w-1/2 text-right">Generation:&nbsp;</span>
           <input
-            className="w-1/2 mr-40 rounded-md px-4 text-black"
+            className="w-1/2 mr-12 md:mr-40 rounded-md px-4 text-black"
             id="generation-saved"
             value={!isEmpty(savedGame) ? savedGame.generation : ''}
             readOnly

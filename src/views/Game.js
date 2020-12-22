@@ -141,7 +141,7 @@ function Game({ location, match }) {
           {/* play - pause */}
           <div className="w-1/5 h-full p-4 flex justify-center items-center">
             <Button onClick={() => setPaused(!paused)} disabled={step}>
-              <font size="+2">{paused ? 'play!' : 'pause'}</font>
+              <font size="+1.3">{paused ? 'play!' : 'pause'}</font>
             </Button>
           </div>
 

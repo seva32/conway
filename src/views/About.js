@@ -28,7 +28,7 @@ function About() {
             Figma
           </a>
         </div>
-        <div className="w-1/5 h-20 relative">
+        <div className="w-4/5 md:w-1/5 h-20 relative">
           <div className="absolute square-ratio w-full">
             <Neon />
           </div>

@@ -147,12 +147,15 @@ h3 {
 
 /* hero screen start */
 
+.font-size-sm {
+  font-size: calc(1rem + 1vw);
+}
+
 .hero-style {
   position: fixed;
   top: 0;
   height: 100vh;
   color: #d7385e;
-  font-size: calc(2rem + 2vw);
   perspective: 500px;
   background: black;
   justify-content: center;
@@ -167,7 +170,6 @@ h3 {
   max-height: 800px;
   max-width: 1280px;
   min-height: 600px;
-  min-width: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,9 +180,15 @@ h3 {
   position: absolute;
 }
 
+.h-300px {
+  height: 300px;
+}
+
+.w-300px {
+  width: 300px;
+}
+
 .hero-frame {
-  height: 500px;
-  width: 500px;
   border-radius: 20px;
   z-index: 100;
   box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de,
@@ -199,9 +207,15 @@ h3 {
   box-shadow: 0 0 300px 150px rgba(255, 255, 255, 0.25);
 }
 
+.h-210px {
+  height: 210px;
+}
+
+.w-210px {
+  width: 210px;
+}
+
 .hero-circle {
-  width: 350px;
-  height: 350px;
   background: brown;
   border: 2px solid #f7f499;
   z-index: 2;
@@ -274,6 +288,10 @@ h3 {
 
 .font-2rem {
   font-size: 2rem;
+}
+
+.font-10rem {
+  font-size: 10rem;
 }
 
 .min-w-20px {
@@ -391,6 +409,26 @@ h3 {
   .background-smooth {
     background-color: rgba(0, 0, 0, 0.4);
   }
+
+  .h-500px {
+    height: 500px;
+  }
+
+  .w-500px {
+    width: 500px;
+  }
+
+  .h-350px {
+    width: 350px;
+  }
+
+  .w-350px {
+    height: 350px;
+  }
+
+  .font-size-lg {
+    font-size: calc(2rem + 2vw);
+  }
 }
 
 @variants hover, focus {
@@ -401,6 +439,16 @@ h3 {
 
 @screen smMax {
   html {
-    font-size: 55%;
+    font-size: 45%;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: 2.3rem;
   }
 }
