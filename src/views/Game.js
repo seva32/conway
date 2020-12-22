@@ -4,8 +4,12 @@ import PropTypes from 'prop-types';
 
 import { Grid, Button } from '../components';
 
+// este componente corresponde a la vista del juego
+// tiene los botones para cambiar intervalo, resetear generacion, play/pause,
+// step mode (avance manual) y guardar jugada
+
 function Game({ location, match }) {
-  const [paused, setPaused] = React.useState(true);
+  // tomar parametros/query string
   const user = match.params.id ? match.params.id : 'User';
   const row = location.search
     ? Number(location.search.split('=')[1].split('&')[0])
@@ -23,12 +27,21 @@ function Game({ location, match }) {
     location.search.split('&')[2].includes('pattern') &&
     location.search.split('&')[2].split('=')[1];
 
+  // maneja el estado play/pause
+  const [paused, setPaused] = React.useState(true);
+  // contador de generaciones
   const [count, setCount] = React.useState(0);
+  // manejo del estado del modo manual paso a paso
   const [step, setStep] = React.useState(false);
+  // reset de generaciones
   const [reset, setReset] = React.useState(false);
+  // customizacion del intervalo entre generaciones
   const [intervalValue, setIntervalValue] = React.useState(300);
+  // estado del boton de seteo de intervalo
   const [showInterval, setShowInterval] = React.useState(false);
+  // referencia a la matriz en componente hijo Grid con el estado de cada celula
   const matrixRef = React.createRef(null);
+  // maneja el estado de cargar jugada guardada
   const [loadSavedMatrix, setLoadSavedMatrix] = React.useState(false);
 
   React.useEffect(() => {
@@ -38,6 +51,7 @@ function Game({ location, match }) {
     }
   }, [reset]);
 
+  // cargar jugada guardada en el estado actual
   React.useEffect(() => {
     if (load) {
       const savedUserData = JSON.parse(localStorage.getItem('user')) || {};
@@ -51,6 +65,7 @@ function Game({ location, match }) {
     }
   }, [load]);
 
+  // guardar jugada en localstorage
   const saveGame = () => {
     localStorage.setItem(
       'user',
@@ -68,7 +83,7 @@ function Game({ location, match }) {
 
   return (
     <div className="w-4/5 mx-auto block relative min-h-screen">
-      {/* buttons */}
+      {/* buttons interval, reset, play/pause, step mode, save */}
       <div className="w-full relative h-48 text-white block">
         <div className="w-full h-24 flex justify-center items-center">
           <h2 className="uppercase relative">{user}</h2>

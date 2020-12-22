@@ -8,17 +8,27 @@ import isEmpty from 'lodash.isempty';
 
 import { Card, Label } from '../components';
 
+// componente de pantalla inicial
+
 function Home({ history }) {
+  // estado para customizar jugada : nombre
   const [user, setUser] = React.useState('');
+  // estado para customizar jugada : filas
   const [row, setRow] = React.useState(null);
+  // estado para customizar jugada : columnas
   const [col, setCol] = React.useState(null);
+  // maneja del estado del boton para cargar jugada guardada
   const [savedGame, setSavedGame] = React.useState({});
+  // maneja el estado para animacion mostrar form para jugada customizada
   const [showForm, setShowForm] = React.useState(false);
   const [submitForm, setSubmitForm] = React.useState(false);
+  // maneja el estado del boton para mostrar los datos de la jugada guardada
   const [showSavedGame, setShowSavedGame] = React.useState(false);
   const [submitSavedGame, setSubmitSavedGame] = React.useState(false);
+  // mantener referencia de la animacion
   const animationRef = React.useRef(null);
 
+  // animacion para mostrar form
   React.useEffect(() => {
     if (showForm) {
       animationRef.current = anime.timeline({
@@ -42,6 +52,8 @@ function Home({ history }) {
     }
   }, [showForm]);
 
+  // animacion para regresar css props al valor original
+  // y push al juego
   React.useEffect(() => {
     if (submitForm) {
       anime({
@@ -63,6 +75,7 @@ function Home({ history }) {
     }
   }, [setShowForm, col, history, row, submitForm, user]);
 
+  // animacion para mostrar jugada guardada
   React.useEffect(() => {
     if (showSavedGame) {
       const savedUserData = JSON.parse(localStorage.getItem('user')) || {};
@@ -88,11 +101,13 @@ function Home({ history }) {
             '-=1500',
           );
       } else {
+        // nasty alert :(
         alert('No saved game available');
       }
     }
   }, [showSavedGame]);
 
+  // volver props css al valor original y push al juego
   React.useEffect(() => {
     if (submitSavedGame) {
       anime({

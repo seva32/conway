@@ -296,16 +296,8 @@ h3 {
   object-fit: cover;
 }
 
-.main-stop {
-  stop-color: #2df5ff;
-}
-.alt-stop {
-  stop-color: #2df5ff;
-}
-
 .st0 {
   fill: #2df5ff;
-  /* fill: url(#gradient); */
   filter: url(#circlefilter);
 }
 .st1 {
@@ -315,43 +307,6 @@ h3 {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 0, 25, 175;
-  will-change: transform;
-}
-.st2 {
-  fill: none;
-  stroke: #2e00ed;
-  stroke-width: 4;
-  stroke-miterlimit: 100;
-  stroke-dasharray: 0, 54, 101;
-  will-change: transform;
-}
-
-.st3 {
-  fill: none;
-  stroke: #f70285;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 100;
-  stroke-dasharray: 0, 37, 129;
-  will-change: transform;
-}
-.st4 {
-  fill: none;
-  stroke: #ff0400;
-  stroke-width: 8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 0, 36, 136;
-  will-change: transform;
-}
-.st5 {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 0, 36, 136;
   will-change: transform;
 }
 
