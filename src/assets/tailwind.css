@@ -298,6 +298,7 @@ h3 {
 
 .st0 {
   fill: #29abe2;
+  will-change: transform;
 }
 .st1 {
   fill: none;
@@ -306,6 +307,7 @@ h3 {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 0, 25, 175;
+  will-change: transform;
 }
 .st2 {
   fill: none;
@@ -313,6 +315,7 @@ h3 {
   stroke-width: 4;
   stroke-miterlimit: 100;
   stroke-dasharray: 0, 54, 101;
+  will-change: transform;
 }
 
 .st3 {
@@ -323,6 +326,7 @@ h3 {
   stroke-linejoin: round;
   stroke-miterlimit: 100;
   stroke-dasharray: 0, 37, 129;
+  will-change: transform;
 }
 .st4 {
   fill: none;
@@ -331,6 +335,7 @@ h3 {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 0, 36, 136;
+  will-change: transform;
 }
 .st5 {
   fill: none;
@@ -339,6 +344,7 @@ h3 {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 0, 36, 136;
+  will-change: transform;
 }
 
 /* neon ani ends */

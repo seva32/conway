@@ -11,14 +11,19 @@ function Rules() {
           Learn about the rules in this game
         </h2>
       </div>
-      <div className="text-pink font-body block mx-auto whitespace-pre-line w-3/5 break-words h-full tracking-wider leading-9">
-        The universe of the Game of Life is an infinite, two-dimensional
-        orthogonal grid of square cells, each of which is in one of two possible
-        states, live or dead, (or populated and unpopulated, respectively).
+      <div className="text-white font-body block mx-auto whitespace-pre-line w-3/5 break-words h-full tracking-wider leading-9">
+        <p>
+          The universe of the Game of Life is an infinite, two-dimensional
+          orthogonal grid of square cells, each of which is in one of two
+          possible states, live or dead, (or populated and unpopulated,
+          respectively).
+        </p>
         <br />
-        Every cell interacts with its eight neighbours, which are the cells that
-        are horizontally, vertically, or diagonally adjacent. At each step in
-        time, the following transitions occur:
+        <p>
+          Every cell interacts with its eight neighbours, which are the cells
+          that are horizontally, vertically, or diagonally adjacent. At each
+          step in time, the following transitions occur:
+        </p>
         <br />
         * Any live cell with fewer than two live neighbours dies, as if by
         underpopulation.
@@ -32,8 +37,10 @@ function Rules() {
         * Any dead cell with exactly three live neighbours becomes a live cell,
         as if by reproduction.
         <br />
-        These rules, which compare the behavior of the automaton to real life,
-        can be condensed into the following:
+        <p className="pt-6">
+          These rules, which compare the behavior of the automaton to real life,
+          can be condensed into the following:
+        </p>
         <br />
         * Any live cell with two or three live neighbours survives.
         <br />
@@ -41,8 +48,10 @@ function Rules() {
         <br />
         * All other live cells die in the next generation.
         <br />
-        Similarly, all other dead cells stay dead. The initial pattern
-        constitutes the seed of the system.
+        <p className="pt-6">
+          Similarly, all other dead cells stay dead. The initial pattern
+          constitutes the seed of the system.
+        </p>
       </div>
     </div>
   );
