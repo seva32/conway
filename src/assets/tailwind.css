@@ -296,14 +296,22 @@ h3 {
   object-fit: cover;
 }
 
+.main-stop {
+  stop-color: #2df5ff;
+}
+.alt-stop {
+  stop-color: #2df5ff;
+}
+
 .st0 {
-  fill: #29abe2;
-  will-change: transform;
+  fill: #2df5ff;
+  /* fill: url(#gradient); */
+  filter: url(#circlefilter);
 }
 .st1 {
   fill: none;
   stroke: #ff00db;
-  stroke-width: 3;
+  stroke-width: 14;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 0, 25, 175;
