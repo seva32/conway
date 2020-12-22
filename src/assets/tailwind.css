@@ -11,12 +11,15 @@ html {
 }
 
 body {
-  /* background: center / cover repeat-y
-    url('https://res.cloudinary.com/seva32/image/upload/v1605282234/background_fkjiss.jpg'); */
+  outline: none;
 }
 
 html,
 body {
+  height: 100%;
+}
+
+#root {
   height: 100%;
 }
 
@@ -408,6 +411,11 @@ h3 {
 
 .will-change {
   will-change: transform;
+}
+
+.bg-cell {
+  box-shadow: inset 0 0 0.5rem 0.5rem #4f4c55;
+  background-image: radial-gradient(circle closest-side, #764f91, #131313);
 }
 
 @responsive {

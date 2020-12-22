@@ -29,7 +29,7 @@ function About() {
           </a>
         </div>
         <div className="w-1/5 h-20 relative">
-          <div className="absolute square-ratio">
+          <div className="absolute square-ratio w-full">
             <Neon />
           </div>
         </div>

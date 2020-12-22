@@ -5,7 +5,7 @@ function Cell({ life, onClick, children }) {
   return (
     <button
       className={`absolute w-full square-ratio rounded-lg flex justify-center items-center ${
-        life ? 'bg-black m-0' : 'bg-grey bg-opacity-40'
+        life ? 'bg-black m-0' : 'bg-cell'
       }`}
       type="button"
       onClick={onClick}
