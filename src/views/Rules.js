@@ -11,7 +11,7 @@ function Rules() {
           Learn about the rules in this game
         </h2>
       </div>
-      <div className="text-white font-body-big sm:font-body md:font-body-big  flex-grow flex flex-col justify-start mx-auto whitespace-pre-line w-full break-words tracking-wider leading-relaxed">
+      <div className="text-white font-rules font-2vw sm:font-18vw md:font-13vw lg:font-1vw flex-grow flex flex-col justify-start mx-auto whitespace-pre-line w-full break-words tracking-wider leading-relaxed">
         <p className="pb-5 sm:pb-2 md:pb-4 lg:pb-6">
           The universe of the Game of Life is an infinite, two-dimensional
           orthogonal grid of square cells, each of which is in one of two
@@ -28,45 +28,37 @@ function Rules() {
           cell with fewer than two live neighbours dies, as if by
           underpopulation.
         </div>
-        <br />
         <div>
           <span className="text-pink inline">&rsaquo;&rsaquo;</span> Any live
           cell with two or three live neighbours lives on to the next
           generation.
         </div>
-        <br />
         <div>
           <span className="text-pink inline">&rsaquo;&rsaquo;</span> Any live
           cell with more than three live neighbours dies, as if by
           overpopulation.
         </div>
-        <br />
         <div>
           <span className="text-pink inline">&rsaquo;&rsaquo;</span> Any dead
           cell with exactly three live neighbours becomes a live cell, as if by
+          reproduction.
         </div>
-        reproduction.
-        <br />
-        <p className="pt-5 sm:pt-2 md:pt-4 lg:pt-6">
+        <p className="py-5 sm:py-2 md:py-4 lg:py-6">
           These rules, which compare the behavior of the automaton to real life,
           can be condensed into the following:
         </p>
-        <br />
         <div>
           <span className="text-pink inline">&rsaquo;&rsaquo;</span> Any live
           cell with two or three live neighbours survives.
         </div>
-        <br />
         <div>
           <span className="text-pink inline">&rsaquo;&rsaquo;</span> Any dead
           cell with three live neighbours becomes a live cell.
         </div>
-        <br />
         <div>
           <span className="text-pink inline">&rsaquo;&rsaquo;</span> All other
           live cells die in the next generation.
         </div>
-        <br />
         <p className="pt-5 sm:pt-2 md:pt-4 lg:pt-6">
           Similarly, all other dead cells stay dead. The initial pattern
           constitutes the seed of the system.

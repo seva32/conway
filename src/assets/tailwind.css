@@ -91,12 +91,15 @@ h3 {
   line-height: 1.375rem;
 }
 
-.font-body-big {
+.font-rules {
   font-family: 'Roboto Slab', serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 1.5rem;
   line-height: 1.9rem;
+}
+
+.font-2vw {
+  font-size: 2vw;
 }
 
 .font-body-bold {
@@ -436,6 +439,18 @@ h3 {
 
   .font-size-lg {
     font-size: calc(2rem + 2vw);
+  }
+
+  .font-18vw {
+    font-size: 1.8vw;
+  }
+
+  .font-13vw {
+    font-size: 1.3vw;
+  }
+
+  .font-1vw {
+    font-size: 1vw;
   }
 }
 
