@@ -75,7 +75,7 @@ function Layout({ children }) {
     <div
       className={`hero-style ${
         hideHero ? 'hidden' : 'flex'
-      } max-w-full font-size-sm md:font-size-lg`}
+      } w-screen font-size-sm md:font-size-lg`}
     >
       <div className="hero-container">
         <div className="hero-circle h-210px md:h-350px w-210px md:w-350px" />
@@ -109,7 +109,7 @@ function Layout({ children }) {
         <hr className="text-white" />
         {children}
         <footer className="layout-footer h-16 flex justify-center items-center border-white border-t font-body text-white">
-          sebastianfantini.com - 2020
+          sebastianfantini.com &copy; 2020
         </footer>
       </div>
     </>
