@@ -1,7 +1,7 @@
 {
   "name": "conway",
   "version": "1.0.0",
-  "description": "Implementación en React o Javascript del​ juego de la vida de Conway.",
+  "description": "Conway game of life implementation",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
