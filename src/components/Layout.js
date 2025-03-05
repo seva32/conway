@@ -106,10 +106,12 @@ function Layout({ children }) {
             Game of Life
           </div>
         </nav>
-        <hr className="text-white" />
         {children}
-        <footer className="layout-footer h-16 flex justify-center items-center border-white border-t font-body text-white">
-          sebastianfantini.com &copy; 2020
+        <footer
+          style={{ fontSize: '1.5rem' }}
+          className="layout-footer h-16 flex justify-center items-center font-body text-white"
+        >
+          sfantini.us &copy; 2025
         </footer>
       </div>
     </>

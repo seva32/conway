@@ -131,11 +131,17 @@ function Home({ history }) {
 
   return (
     <div className="w-11/12 md:w-4/5 min-h-screen mx-auto flex flex-col justify-center items-center -mt-24">
-      <div className="w-full mt-24 h-80">
+      <div className="w-full mt-24 h-80" style={{ paddingTop: '2rem' }}>
         <h1 className="text-white w-full h-3/5 flex justify-center items-center">
-          <span className="uppercase">welcome to&nbsp;</span>
+          <span
+            className="uppercase"
+            style={{ fontSize: '3rem', alignSelf: 'baseline' }}
+          >
+            welcome to&nbsp;
+          </span>
           <span className="font-logo">Game of Life</span>
         </h1>
+        <div style={{ minHeight: '10rem ' }}></div>
         <h2 className="text-white w-full h-2/5 flex justify-center items-start">
           Find more INFO about this game
           <span>
