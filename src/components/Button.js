@@ -7,7 +7,7 @@ function Button({ children, submit, onClick, disabled }) {
       type={submit ? 'submit' : 'button'}
       onClick={onClick}
       disabled={disabled}
-      className="w-full h-16 button-inset flex justify-center items-center font-button"
+      className="w-full h-16 button-inset flex justify-center items-center font-button glowing-box-smaller"
     >
       {children}
     </button>

@@ -202,11 +202,95 @@ h3 {
 .hero-frame {
   border-radius: 20px;
   z-index: 100;
-  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de,
-    0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de,
-    inset 0 0 5px #fff, inset 0 0 10px #fff, inset 0 0 15px #fff,
-    inset 0 0 20px #ff00de, inset 0 0 35px #ff00de, inset 0 0 40px #ff00de,
-    inset 0 0 50px #ff00de, inset 0 0 75px #ff00de;
+  /* box-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 10px #ff00de,
+    0 0 17.5px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 37.5px #ff00de,
+    inset 0 0 2.5px #fff, inset 0 0 5px #fff, inset 0 0 7.5px #fff,
+    inset 0 0 10px #ff00de, inset 0 0 17.5px #ff00de, inset 0 0 20px #ff00de,
+    inset 0 0 25px #ff00de, inset 0 0 37.5px #ff00de; */
+}
+
+@keyframes glowingShadow {
+  0% {
+    box-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 10px #ff00de,
+      0 0 17.5px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 37.5px #ff00de,
+      inset 0 0 2.5px #fff, inset 0 0 5px #fff, inset 0 0 7.5px #fff,
+      inset 0 0 10px #ff00de, inset 0 0 17.5px #ff00de, inset 0 0 20px #ff00de,
+      inset 0 0 25px #ff00de, inset 0 0 37.5px #ff00de;
+  }
+  25% {
+    box-shadow: 0 0 5px #fff, 0 0 7.5px #fff, 0 0 12px #fff, 0 0 15px #ff00de,
+      0 0 25px #ff00de, 0 0 30px #ff00de, 0 0 35px #ff00de, 0 0 50px #ff00de,
+      inset 0 0 3px #fff, inset 0 0 6px #fff, inset 0 0 9px #fff,
+      inset 0 0 12px #ff00de, inset 0 0 20px #ff00de, inset 0 0 25px #ff00de,
+      inset 0 0 30px #ff00de, inset 0 0 40px #ff00de;
+  }
+  50% {
+    box-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #fff, 0 0 12px #ff00de,
+      0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 30px #ff00de, 0 0 45px #ff00de,
+      inset 0 0 2px #fff, inset 0 0 4px #fff, inset 0 0 6px #fff,
+      inset 0 0 9px #ff00de, inset 0 0 15px #ff00de, inset 0 0 20px #ff00de,
+      inset 0 0 25px #ff00de, inset 0 0 35px #ff00de;
+  }
+  75% {
+    box-shadow: 0 0 6px #fff, 0 0 8px #fff, 0 0 14px #fff, 0 0 18px #ff00de,
+      0 0 28px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 55px #ff00de,
+      inset 0 0 4px #fff, inset 0 0 7px #fff, inset 0 0 10px #fff,
+      inset 0 0 14px #ff00de, inset 0 0 22px #ff00de, inset 0 0 27px #ff00de,
+      inset 0 0 33px #ff00de, inset 0 0 42px #ff00de;
+  }
+  100% {
+    box-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 10px #ff00de,
+      0 0 17.5px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de, 0 0 37.5px #ff00de,
+      inset 0 0 2.5px #fff, inset 0 0 5px #fff, inset 0 0 7.5px #fff,
+      inset 0 0 10px #ff00de, inset 0 0 17.5px #ff00de, inset 0 0 20px #ff00de,
+      inset 0 0 25px #ff00de, inset 0 0 37.5px #ff00de;
+  }
+}
+
+.glowing-box {
+  animation: glowingShadow 5s infinite alternate ease-in-out;
+}
+
+@keyframes glowingShadowSmaller {
+  0% {
+    box-shadow: 0 0 1.25px #fff, 0 0 2.5px #fff, 0 0 3.75px #fff, 0 0 5px #ff00de,
+      0 0 8.75px #ff00de, 0 0 10px #ff00de, 0 0 12.5px #ff00de, 0 0 18.75px #ff00de,
+      inset 0 0 1.25px #fff, inset 0 0 2.5px #fff, inset 0 0 3.75px #fff,
+      inset 0 0 5px #ff00de, inset 0 0 8.75px #ff00de, inset 0 0 10px #ff00de,
+      inset 0 0 12.5px #ff00de, inset 0 0 18.75px #ff00de;
+  }
+  25% {
+    box-shadow: 0 0 2.5px #fff, 0 0 3.75px #fff, 0 0 6px #fff, 0 0 7.5px #ff00de,
+      0 0 12.5px #ff00de, 0 0 15px #ff00de, 0 0 17.5px #ff00de, 0 0 25px #ff00de,
+      inset 0 0 1.5px #fff, inset 0 0 3px #fff, inset 0 0 4.5px #fff,
+      inset 0 0 6px #ff00de, inset 0 0 10px #ff00de, inset 0 0 12.5px #ff00de,
+      inset 0 0 15px #ff00de, inset 0 0 20px #ff00de;
+  }
+  50% {
+    box-shadow: 0 0 1.5px #fff, 0 0 3px #fff, 0 0 4.5px #fff, 0 0 6px #ff00de,
+      0 0 10px #ff00de, 0 0 12.5px #ff00de, 0 0 15px #ff00de, 0 0 22.5px #ff00de,
+      inset 0 0 1px #fff, inset 0 0 2px #fff, inset 0 0 3px #fff,
+      inset 0 0 4.5px #ff00de, inset 0 0 7.5px #ff00de, inset 0 0 10px #ff00de,
+      inset 0 0 12.5px #ff00de, inset 0 0 17.5px #ff00de;
+  }
+  75% {
+    box-shadow: 0 0 3px #fff, 0 0 4px #fff, 0 0 7px #fff, 0 0 9px #ff00de,
+      0 0 14px #ff00de, 0 0 17.5px #ff00de, 0 0 20px #ff00de, 0 0 27.5px #ff00de,
+      inset 0 0 2px #fff, inset 0 0 3.5px #fff, inset 0 0 5px #fff,
+      inset 0 0 7px #ff00de, inset 0 0 11px #ff00de, inset 0 0 13.5px #ff00de,
+      inset 0 0 16.5px #ff00de, inset 0 0 21px #ff00de;
+  }
+  100% {
+    box-shadow: 0 0 1.25px #fff, 0 0 2.5px #fff, 0 0 3.75px #fff, 0 0 5px #ff00de,
+      0 0 8.75px #ff00de, 0 0 10px #ff00de, 0 0 12.5px #ff00de, 0 0 18.75px #ff00de,
+      inset 0 0 1.25px #fff, inset 0 0 2.5px #fff, inset 0 0 3.75px #fff,
+      inset 0 0 5px #ff00de, inset 0 0 8.75px #ff00de, inset 0 0 10px #ff00de,
+      inset 0 0 12.5px #ff00de, inset 0 0 18.75px #ff00de;
+  }
+}
+
+.glowing-box-smaller {
+  animation: glowingShadowSmaller 5s infinite alternate ease-in-out;
 }
 
 .hero-frame::before {
