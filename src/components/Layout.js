@@ -79,7 +79,7 @@ function Layout({ children }) {
     >
       <div className="hero-container">
         <div className="hero-circle h-210px md:h-350px w-210px md:w-350px" />
-        <div className="hero-frame h-300px md:h-500px w-300px md:w-500px" />
+        <div className="hero-frame h-300px md:h-500px w-300px md:w-500px glowing-box" />
         <div className="hero-text">Game of Life</div>
         <div className="final-text final-text-name font-logo">Game of Life</div>
       </div>
@@ -102,7 +102,10 @@ function Layout({ children }) {
               <Link to="/about">About</Link>
             </li>
           </ul>
-          <div className="font-logo font-2rem text-white final-text-name">
+          <div
+            style={{ fontSize: '2.5rem' }}
+            className="font-logo font-2rem text-white final-text-name"
+          >
             Game of Life
           </div>
         </nav>

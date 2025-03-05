@@ -8,7 +8,7 @@ function Card({ children, onClick }) {
       onClick={onClick}
       className="relative w-full h-32 md:h-80 m-8"
     >
-      <div className="w-full h-full bg-black bg-opacity-60 absolute inset-0 rounded-lg flex justify-center items-center p-4 card-inset">
+      <div className="w-full h-full bg-black bg-opacity-60 absolute inset-0 rounded-lg flex justify-center items-center p-4 card-inset glowing-box">
         {children}
       </div>
     </button>
