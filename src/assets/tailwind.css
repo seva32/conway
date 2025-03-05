@@ -39,7 +39,7 @@ h1 {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 4.5rem;
+  font-size: 5rem;
   line-height: 5.2rem;
   /* identical to box height */
   letter-spacing: -0.02rem;
@@ -142,7 +142,7 @@ h3 {
   font-family: 'Roboto Slab', serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 2rem;
   line-height: 1.4rem;
 }
 
@@ -466,7 +466,7 @@ h3 {
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     line-height: 3.5rem;
   }
 

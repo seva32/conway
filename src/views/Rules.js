@@ -7,11 +7,16 @@ function Rules() {
         <h1 className="text-white w-full h-3/5 flex justify-center items-center">
           <span className="font-logo">Game of Life</span>
         </h1>
+        <div style={{ minHeight: '3rem' }} />
         <h2 className="text-white w-full h-2/5 flex justify-center items-start">
-          Learn about the rules in this game
+          <b>Learn about the rules in this game</b>
         </h2>
       </div>
-      <div className="text-white font-rules font-2vw sm:font-18vw md:font-13vw lg:font-1vw flex-grow flex flex-col justify-start mx-auto whitespace-pre-line w-full break-words tracking-wider leading-relaxed">
+      <div style={{ minHeight: '3rem' }} />
+      <div
+        style={{ fontSize: '1.7rem' }}
+        className="text-white font-rules flex-grow flex flex-col justify-start mx-auto whitespace-pre-line w-full break-words tracking-wider leading-relaxed"
+      >
         <p className="pb-5 sm:pb-2 md:pb-4 lg:pb-6">
           The universe of the Game of Life is an infinite, two-dimensional
           orthogonal grid of square cells, each of which is in one of two

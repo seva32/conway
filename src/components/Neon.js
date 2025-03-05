@@ -39,7 +39,7 @@ function Neon() {
             <filter id="circlefilter">
               <feGaussianBlur
                 in="SourceAlpha"
-                stdDeviation="25"
+                stdDeviation="10"
                 result="desenfoque"
               />
               <feFlood floodColor="#2df5ff" />
