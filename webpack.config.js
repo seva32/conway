@@ -66,8 +66,9 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: path.resolve(__dirname, 'public'),
-    publicPath: '/',
+    static: {
+      directory: path.resolve(__dirname, 'public'),
+    },
     hot: true,
   },
   devtool: 'source-map',
