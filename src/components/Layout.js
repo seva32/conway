@@ -55,11 +55,10 @@ function Layout({ children }) {
           complete(_anim) {
             anime({
               targets: '.hero-style',
-              translateY: '-100vh',
-              translateZ: 0,
-              duration: 2500,
+              opacity: 0,
+              duration: 1000,
               zIndex: -1,
-              delay: 1000,
+              // delay: 1000,
               easing: 'easeInCubic',
               complete(_ani) {
                 setHideHero(true);
