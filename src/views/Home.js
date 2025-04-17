@@ -141,8 +141,7 @@ function Home({ history }) {
           </span>
           <span className="font-logo">Game of Life</span>
         </h1>
-        <div style={{ minHeight: '10rem ' }}></div>
-        <h2 className="text-white w-full h-2/5 flex justify-center items-start">
+        <h2 className="text-white w-full h-2/5 flex justify-center items-start mt-5">
           Find more INFO about this game
           <span>
             <Link to="/rules">&nbsp;HERE</Link>
