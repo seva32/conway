@@ -88,7 +88,7 @@ function Layout({ children }) {
   return (
     <>
       {hero()}
-      <div className="layout-container bg-black  overflow-hidden" id="layout">
+      <div className="layout-container overflow-hidden" style={{backgroundColor: '#190d95'}} id="layout">
         <nav className="w-4/5 h-24 mx-auto flex justify-between items-center">
           <ul className="w-1/2 md:w-1/3 flex flex-nowrap justify-between items-center text-white font-link uppercase">
             <li>
